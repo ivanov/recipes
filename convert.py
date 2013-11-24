@@ -1,4 +1,5 @@
 from __future__ import division 
+from fractions import Fraction
 in_tbsp = dict(cup=16)
 in_tsp = dict(tbsp=3)
 in_cups = dict()
@@ -12,16 +13,33 @@ recipe = dict(
         vanilla = [1, 'tsp']
         )
 
-def convert(scale=1.0):
+def convert(recipe=recipe, scale=1.0):
+    "Convert a recipe, rescaling it as necessary"
     for ingredient, (amt, measurement) in recipe.items():
         amt = amt * scale
         if measurement == "cup":
             amt = amt*in_tbsp[measurement]
             measurement = 'tbsp'
+
+        # if it's a whole number, print that, without trailing ".0"
+        if int(amt) == amt:
+            amt=int(amt)
+        else:
+            wholes = int(amt)
+            parts = Fraction(amt-wholes)
+            if wholes == 0:
+                wholes=''
+            else:
+                wholes = str(wholes) + " "
+            amt = wholes + str(parts)
         print amt, measurement, "of", ingredient
 
 
-convert(1/4)
+convert(recipe, 1/4)
+
+recipe_2 = recipe.copy()
+recipe_2['sugar'] = [1, 'cup']
         
+convert(recipe_2, 1/4)
 
 
