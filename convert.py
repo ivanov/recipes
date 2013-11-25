@@ -35,7 +35,7 @@ def convert(recipe=recipe, scale=1.0):
         print amt, measurement, "of", ingredient
 
 
-convert(recipe, 1/4)
+convert(recipe, 1/4) # added another 4 tsp of cocoa powder, 1/4 tsp vanilla
 
 recipe_2 = recipe.copy()
 recipe_2['sugar'] = [1, 'cup']
