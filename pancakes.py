@@ -5,9 +5,9 @@ recipe = dict(
         sugar = [1, 'tbsp'],
         salt = [1, 'tsp'],
         milk = [1 + 1/4, 'cup'],
-        vanilla = [1/2, 'tsp']
-        baking_powder = [3 + 1/2, 'tsp']
-        egg = [1, 'count']
+        vanilla = [1/2, 'tsp'],
+        baking_powder = [3 + 1/2, 'tsp'],
+        egg = [1, 'count'],
         butter_melted = [3, 'tbsp']
         )
 
