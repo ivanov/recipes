@@ -1,5 +1,7 @@
 #makes 8 servings 
 
+from __future__ import division
+
 recipe = dict(
         flour = [1 + 1/2, 'cup'],
         sugar = [1, 'tbsp'],
